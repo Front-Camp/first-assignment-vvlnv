@@ -8,7 +8,13 @@
  * @return {string} truncated string
  */
 const truncate = (str, length = 0, replacer = '...') => {
-  /* your logic here...*/
+  if (length > str.length || !str.length) {
+    return str
+  } else {
+    const finalLength = length ? length : str.length;
+    const pattern = new RegExp(`.{${finalLength - replacer.length}}`);
+    return `${str.match(pattern)[0]}${replacer}`
+  }
 };
 
 export default truncate;

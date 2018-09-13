@@ -6,7 +6,17 @@
  * getFlags(arr); // [1, 2, 3, 4, 5, 6]
  */
 const getFlags = arr => {
-  /* your logic here...*/
+  if (arr && arr.length) {
+    return arr.reduce((acc, cur) => {
+      if (cur.flags && cur.flags.length) {
+        return [...acc, ...cur.flags]
+      } else {
+        // Err
+      }
+    }, [])
+  } else {
+    // Err
+  }
 };
 
 export default getFlags;
